@@ -1,0 +1,30 @@
+
+- insertando valores en tabla de obras clasicas
+
+INSERT INTO classics(author,title,year,isbn,category) VALUES
+    -> ('Mark Twain','The adventures of Tom Sawyer','1876','9781598184891','Fiction'),
+    -> ('Jane Austen','Pride and Prejudice','1811','9780582506206','Fiction'),
+    -> ('Charles Darwin','The Origin of Species','1856','9780517123201','Non-Fiction'),
+    -> ('Charles Dickens','The Old Curiosity Shop','1841','9780099533474','Fiction'),
+    -> ('William Shakespeare','Romeo and Juliet','1594','9870192814968','Play');
+
+-creando la tabla de clientes
+
+CREATE TABLE customers (
+    -> name VARCHAR(128),
+    -> isbn CHAR(13)) ENGINE InnoDB;
+
+
+--insetando valors en abla de clientes
+
+INSERT INTO customers(name, isbn) VALUES ('Joe Bloggs','9780099533474'),('Mary Smith','9780582506206'),('Jack Wilson','9780517123201');
+
+consultas combinadas
+
+ SELECT name,author,title FROM customers,classics
+    -> WHERE customers.isbn=classics.isbn;
+
+SELECT name,author,title FROM customers NATURAL JOIN classics;
+
+SELECT author, title FROM classics WHERE 
+author LIKE 'Charles%' AND author LIKE "%Darwin";

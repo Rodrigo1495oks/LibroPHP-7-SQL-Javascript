@@ -1,0 +1,18 @@
+1- ingresar como root
+
+mysql -u root y pulñsar enter
+
+2- crear usuario
+CREATE USER 'rodrigo'@'localhost' IDENTIFIED BY '12345';
+
+3- otorgar todos los privilegios al usuario
+
+GRANT ALL PRIVILEGES ON * . * TO 'rodrigo'@'localhost';
+
+4- FLUSH PRIVILEGES
+
+Una vez hecho esto, tu nueva cuenta de usuario tendrá el mismo acceso a la base de datos que el usuario root
+
+5- comando para copias de seguridad
+
+mysqldump -u rodrigo -p libroPHP > copiaPHP.qsl
