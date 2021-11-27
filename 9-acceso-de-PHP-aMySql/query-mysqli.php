@@ -12,7 +12,7 @@ if ($connection->connect_error) {
     die('Fatal Error');
 }
 
-$rows=$result->nums_rows;
+$rows=$result->num_rows;
 for ($j=0; $j < $rows; $j++) { 
     $result->data_seek($j);
     
