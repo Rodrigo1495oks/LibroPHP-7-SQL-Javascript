@@ -42,7 +42,7 @@ if (isset($_POST['delete']) && isset($POST['isbn'])) {
 
 echo <<<_END
 
-<form action="sqltest.php" method="POST">
+<form action="sqltest.php" method="post">
 
 <pre>
     Author:   <input type="text" name="author" id="author">
@@ -66,7 +66,7 @@ if (!$result) {
 
 $rows = $result->num_rows;
 
-for ($j = 0; $j < $rows; $j++) {
+for ($j = 0; $j < $rows; ++$j) {
     # code...
 
     $row = $result->fetch_array(MYSQLI_NUM);
