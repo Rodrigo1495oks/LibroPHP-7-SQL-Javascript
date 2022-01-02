@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .signup {
+            border: 1 px solid #999999;
+            font: normal 14px helvetica;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="signup" border="0" cellpadding="2" cellspacing="2" bgcolor="#eeeeee">
+        <th colspan="2" align="center">Signup Form</th>
+        <form action="adduser.php" method="post" onsubmit="return validate(this)">
+            <tr>
+                <td>Forename</td>
+                <td><input type="text" name="forename" id="forename" maxlength="32"></td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td><input type="text" name="surname" id="surname" maxlength="32"></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" id="username" maxlength="32"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="password" name="password" id="password" maxlength="32"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" name="age" id="age" maxlength="3"></td>
+            </tr>
+            <tr>
+                <td>Email/td>
+                <td><input type="email" name="email" id="email" maxlength="64"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <input type="submit" value="Signup"></td>
+            </tr>
+        </form>
+    </table>
+    <script>
+        function validate(form) {
+            fail = validateForename(form.forename.value)
+            fail += validateSurname(form.surname.value)
+            fail += validateUsername(form.username.value)
+            fail += validatePassword(form.password.value)
+            fail += validateAge(form.age.value)
+            fail += validateEmail(form.email.value)
+
+            if (fail == "") {
+                return true
+            }
+
+            alert(fail)
+            return false
+        }
+
+        function validateForename(field) {
+            return (field == "") ? "No Forename was entered.\n" : ""
+        }
+
+        function validateSurname(field) {
+            return (field == "") ? "No Surname was entered.\n" : ""
+        }
+
+        function validateUsername(field) {
+            if (field == '') {
+                return "No username was entered.\n"
+            } else if (/[^a-zA-Z0-9_-]/.test(field)) {
+                return "Only a-z, A-Z, 0-9, - and _ allowed in Usernames.\n"
+            }
+            return ""
+        }
+
+        function validatePassword(field) {
+            if (field == '') {
+                return "No username was entered.\n"
+            } else if (field.length < 6) {
+                return "Passwords must be at least 6 Characters.\n"
+            } else if (!/[a-z]/.test(field) || !/[A-Z]/.test(field) || !/[0-9]/.test(field)) {
+                return "Passwords require one each of a-z, A-Z and 0-9.\n"
+            }
+        }
+
+        function validateAge(field) {
+            if (field == '' || isNaN(field)) {
+                return "No Age was entered.\n"
+            } else if (field < 18 || field > 110) {
+                return "Age must be between 18 and 110.\n"
+            }
+        }
+
+        function validateImail(field) {
+            if (field == '') {
+                return "No email was entered.\n"
+            } else if (!(field.indexOf(".") > 0) && (field.indexOf("@") > 0) || /[^a-aZ-Z0-9.@_-]/.test(field)) {
+                return "The email address is invalid.\n"
+            }
+        }
+    </script>
+
+    <!-- </script> -->
+</body>
+
+</html>
