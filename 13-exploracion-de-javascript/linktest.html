@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Test</title>
+</head>
+<body>
+    <a href="http://mysite.com" id="mylink">Click me</a> <br>
+
+    <script>
+        url=document.links.mylink.href
+        url=document.getElementById('mylink').href
+        url=document.links[0].href
+
+        document.write(`The URL is: ${url} <br>`)
+
+        
+    </script>
+
+    <script>
+        numlinks=document.links.length
+        document.write(numlinks)
+
+        document.location.href='https://www.marcombo.com/'
+    </script>
+</body>
+</html>
