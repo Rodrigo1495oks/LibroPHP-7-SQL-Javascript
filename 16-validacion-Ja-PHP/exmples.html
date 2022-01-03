@@ -18,6 +18,16 @@
 <body>
     <table class="signup" border="0" cellpadding="2" cellspacing="2" bgcolor="#eeeeee">
         <th colspan="2" align="center">Signup Form</th>
+
+        <tr>
+            <td colspan="2">Sorry, the following errors were found<br>in your form:
+                <p>
+                    <font color='red' size=1>
+                        <i>$fail</i>
+                    </font>
+                </p>
+            </td>
+        </tr>
         <form action="adduser.php" method="post" onsubmit="return validate(this)">
             <tr>
                 <td>Forename</td>
@@ -100,7 +110,7 @@
             }
         }
 
-        function validateImail(field) {
+        function validateEmail(field) {
             if (field == '') {
                 return "No email was entered.\n"
             } else if (!(field.indexOf(".") > 0) && (field.indexOf("@") > 0) || /[^a-aZ-Z0-9.@_-]/.test(field)) {
@@ -113,3 +123,4 @@
 </body>
 
 </html>
+
