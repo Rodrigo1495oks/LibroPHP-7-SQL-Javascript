@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding elements</title>
+</head>
+<body>
+    This is a document with only thi8s text in it <br>
+
+
+    <script src="OSC.js"></script>
+    <script>
+        alert("Click ok to add an element")
+        newDiv=document.createElement("div")
+        newDiv.id='NewDiv'
+        document.body.appendChild(newDiv)
+
+        S(newDiv).border="solid 1px red"
+        S(newDiv).width='100px'
+        S(newDiv).height="100px"
+        newDiv.innerHtml='i´m a new object inserted in the DOM'
+        tmp=newDiv.offsetTop
+
+        alert('Click ok to remove the element')
+        prode=newDiv.parentNode
+        prode.removeChild(newDiv)
+        tmp=prode.offsetTop
+    </script>
+</body>
+</html>
