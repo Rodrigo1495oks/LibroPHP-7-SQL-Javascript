@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second jquery example</title>
+</head>
+<body>
+
+    <blockquote>Powerful and flexible as Javascript is, with a pletora of built-in functions, it still necessary to use aditional code for simple things that cannot be achieved natively or with css
+        , such as animaion, event handling
+    </blockquote>
+
+    <div class="advert">
+        This is and ad
+    </div>
+    <p>this is my <span class="new">New</span>Website</p>
+    
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $("blockquote").css("background","lime")
+        $("#advert").css("border","3px dashed red")
+        $(".new").css("text-decoration","underline")
+        $("blockquote, #advert, .new").css("font-weight","bold")
+    </script>
+</body>
+</html>
